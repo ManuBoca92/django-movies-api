@@ -39,7 +39,7 @@ class MoviesViewSet(viewsets.ModelViewSet):
                         s = serializer(data=data)
                         s.is_valid(raise_exception=True)
                         s.save()
-                    return Response(s.data)
+                    return Response(s.data, status=status.HTTP_201_CREATED)
                 return Response('Movie already exists!')
             return Response('Not such movie was found!',
                             status=status.HTTP_404_NOT_FOUND)
