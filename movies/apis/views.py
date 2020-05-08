@@ -40,11 +40,13 @@ class MoviesViewSet(viewsets.ModelViewSet):
                         s.is_valid(raise_exception=True)
                         s.save()
                     return Response(s.data, status=status.HTTP_201_CREATED)
-                return Response('Movie already exists!')
-            return Response('Not such movie was found!',
+                return Response(data={'Error message': 'Movie already exists!'})
+            return Response(data={'Error message': 'Not such movie was found!'},
                             status=status.HTTP_404_NOT_FOUND)
-        return Response('Please provide a "Title" in POST request body',
-                        status=status.HTTP_400_BAD_REQUEST)
+        return Response(
+            data={
+                'Error message': 'Please provide a "Title" in POST request body'},
+            status=status.HTTP_400_BAD_REQUEST)
 
 
 class CommentsViewSet(viewsets.ModelViewSet):
