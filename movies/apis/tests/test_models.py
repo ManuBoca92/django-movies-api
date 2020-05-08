@@ -1,5 +1,8 @@
 from django.test import TestCase
+
 from ..models import Movie, Comment
+
+
 # Create your tests here.
 
 
@@ -7,6 +10,7 @@ class MovieModelTest(TestCase):
     """
     Test module for Movie model
     """
+
     def setUp(self) -> None:
         Movie.objects.create(Title="Old Boys")
 
@@ -19,6 +23,7 @@ class CommentModelTest(TestCase):
     """
     Test module for Comment model
     """
+
     def setUp(self) -> None:
         movie = Movie.objects.create(Title="Old Boys")
         Comment.objects.create(movie_id=movie, movie_comment="Cool movie")
