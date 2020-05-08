@@ -48,7 +48,6 @@ REST_FRAMEWORK = {
     ]
 }
 
-JSON_API_FORMAT_FIELD_NAMES = 'dasherize'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
