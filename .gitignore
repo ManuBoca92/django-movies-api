@@ -6,3 +6,5 @@ moviesOMDb/apis/__pycache__/
 moviesOMDb/movies/__pycache__/
 
 moviesOMDb/apis/migrations/__pycache__/
+
+movies/apis/migrations/__pycache__/
