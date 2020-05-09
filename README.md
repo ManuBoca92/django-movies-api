@@ -39,8 +39,13 @@ Here is the heroku setup in case you want you check it out
 ```
 brew tap heroku/brew && brew install heroku
 ```
-2. Cretae a new application as explained in heroku documentation.
-3. Deploy application`command`
+2. Create a new heroku application and connect it GitHub.
+3. Clone repo and cd to root directory
+4. Set the stack of your app to `container`:
+```
+heroku stack:set container
+```
+5. Deploy application`command`
 ```
 $ git push heroku master 
 ```
@@ -52,11 +57,11 @@ Then, rerun
 ```
 $ git push heroku master 
 ```
-4. Migrate the database
+6. Migrate the database
 ```
 $ heroku run python manage.py migrate
 ```
-5. If all went well, at this stage you can vist the application by
+7. If all went well, at this stage you can vist the application by
 ```
 heroku open
 ```
