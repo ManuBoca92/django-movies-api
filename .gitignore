@@ -1,5 +1,5 @@
 .idea/
 .env/
-movies/apis/__pycache__/
+moviesOMDb/apis/__pycache__/
 
-movies/movies/__pycache__/
+moviesOMDb/movies/__pycache__/
