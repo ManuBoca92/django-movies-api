@@ -12,6 +12,7 @@ router.register(r'comments', CommentsViewSet)
 urlpatterns = [
     url(r'movie-detail', MovieDetailsView.as_view(), name='movie_details_view'),
     url(r'top', TopView.as_view(), name='top_view')
+
 ]
 
 urlpatterns += router.urls

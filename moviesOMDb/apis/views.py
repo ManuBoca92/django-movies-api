@@ -11,8 +11,15 @@ from .models import Movie, Comment, MovieDetail
 from .serializers import MovieSerializer, CommentSerializer, \
     MovieDetailSerializer
 from .views_helpers import call_external_api
+from django.http import HttpResponse
+
 
 API_KEY = 'c544ff3a'
+
+
+def index(request):
+    html = 'Welcome! Please use API endpoints to make requests'
+    return HttpResponse(html)
 
 
 class MoviesViewSet(viewsets.ModelViewSet):
