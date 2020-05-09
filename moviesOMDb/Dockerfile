@@ -1,6 +1,6 @@
 FROM python:3
 
-LABEL maintainer="Ebonom Mfam ebonom.n.mfam@gmail.com"
+LABEL maintainer="Ebonom N. Mfam ebonom.n.mfam@gmail.com"
 
 RUN python -m pip install --upgrade pip
 
