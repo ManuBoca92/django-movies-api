@@ -47,6 +47,7 @@ heroku stack:set container
 ```
 5. Deploy application`command`
 ```
+$ heroku buildpacks:set heroku/python
 $ git push heroku master 
 ```
 *If you get an error message with collectstatic, simply disable it by instructing Heroku to ignore running the manage.py collecstatic command during the deployment process.*
