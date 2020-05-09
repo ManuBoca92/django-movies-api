@@ -39,30 +39,26 @@ Here is the heroku setup in case you want you check it out
 ```
 brew tap heroku/brew && brew install heroku
 ```
-2. Create a new heroku application and connect it GitHub.
-3. Clone repo and cd to root directory
-4. Set the stack of your app to `container`:
+2. Create a new heroku application and connect this GitHub repo.
+3. To use Heroku CLI, clone repo to local machine and cd to root directory
+4. Login to heroku on CLI and set the stack of your app to *container*:
 ```
 heroku stack:set container
 ```
 5. Deploy application`command`
 ```
-$ heroku buildpacks:set heroku/python
 $ git push heroku master 
 ```
 *If you get an error message with collectstatic, simply disable it by instructing Heroku to ignore running the manage.py collecstatic command during the deployment process.*
 ```
 $ heroku config:set DISABLE_COLLECTSTATIC=1
+$ heroku buildpacks:set heroku/python
 ```
 Then, rerun
 ```
 $ git push heroku master 
 ```
-6. Migrate the database
-```
-$ heroku run python manage.py migrate
-```
-7. If all went well, at this stage you can vist the application by
+6. If all went well, at this stage you can vist the application by
 ```
 heroku open
 ```
@@ -210,9 +206,5 @@ Movies are ranked according to their number of comments and to fetch the list `G
     }
 ]
 ```
-
-
-#### Project setup
-
 
 
