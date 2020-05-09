@@ -32,7 +32,7 @@ We'd like you to build simple REST API for us - a basic movie database interacti
 I implemented this task using [Django REST framework](https://www.django-rest-framework.org/) and other third-party libraries as instructed. Please see third party libraries below;
 * [drf-writable-nested](https://pypi.org/project/drf-writable-nested/) - is a writable nested helpers for django-rest-framework's serializers. As the name implies, I used it for my nested `MovieDetail` and `Ratings`serializers.
 
-As requested that the application be dockerized and deployed on a cloud platform, preferably Heroku. Here is my application domain https://warm-journey-10447.herokuapp.com already deployed on Heroku and configured with automatica deployments after push to `master` branch.
+As requested that the application be dockerized and deployed on Heroku. Here is my application domain https://warm-journey-10447.herokuapp.com and it's configured with automatic deployments after push to `master` branch.
 
 Here is the heroku setup in case you want you check it out
 1. Create an account on heroku and download needed CLI using 
