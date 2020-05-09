@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 COPY . .
 
 CMD python manage.py migrate
-CMD gunicorn movies.wsgi:application -w 2 --bind 0.0.0.0:8000
+CMD gunicorn movies.wsgi:application -w 2
