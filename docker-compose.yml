@@ -10,7 +10,7 @@ services:
     - "8000:8000"
     environment:
       DEBUG: 'true'
-    command: gunicorn movies.wsgi:application -w 2 --bind 0.0.0.0:8000
+    command: gunicorn movies.wsgi:application -w 2
     depends_on:
       - migration
   migration:
