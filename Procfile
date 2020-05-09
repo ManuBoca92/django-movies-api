@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath movies movies.wsgi
+web: gunicorn --pythonpath moviesOMDb movies.wsgi
