@@ -24,7 +24,10 @@ SECRET_KEY = 'z$jdjltwqtj+%kie&lc(!5jkq8u@f7$h38(&hz__*k+bl*anul'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'warm-journey-10447.herokuapp.com']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '0.0.0.0',
+    'warm-journey-10447.herokuapp.com']
 
 # Application definition
 
@@ -49,7 +52,6 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,7 +132,3 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
