@@ -1,6 +1,5 @@
 import datetime
 
-from django.conf import settings
 from django.db.models import Count, Window, F
 from django.db.models.functions.window import DenseRank
 from django.http import HttpResponse
@@ -118,10 +117,9 @@ class TopView(views.APIView):
 
         start_date = datetime.date(2020, 4, 13)
         end_date = datetime.datetime.now()
-        ranking = Comment.objects \
-            .filter(created_at__range=(start_date, end_date)) \
-            .values('movie_id').order_by('movie_id') \
-            .annotate(total_comments=Count('movie_id')) \
-            .annotate(rank=dense_rank)
-
+        ranking = (Comment.objects
+                   .filter(created_at__range=(start_date, end_date))
+                   .values('movie_id')
+                   .annotate(total_comments=Count('movie_comment'))
+                   .annotate(rank=dense_rank))
         return Response(ranking)
