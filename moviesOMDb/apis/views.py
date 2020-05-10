@@ -14,7 +14,9 @@ from .serializers import MovieSerializer, CommentSerializer, \
     MovieDetailSerializer
 from .views_helpers import call_external_api
 
-OMDB_API_KEY = settings.OMDB_API_KEY
+# OMDB_API_KEY = settings.OMDB_API_KEY #good approach
+
+OMDB_API_KEY = 'c544ff3a'  # Not a good approach but for this task I left it so
 
 
 def index(request):
