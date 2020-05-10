@@ -28,7 +28,7 @@ class MovieApiTest(APITestCase):
         self.assertEqual(len(response.data), 2)
 
     def test_post_movie_request_no_body(self):
-        data = {'Title': ''}
+        data = {}
         response = self.client.post(self.url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(response.json(),
