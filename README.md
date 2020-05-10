@@ -188,11 +188,21 @@ Vary: Accept
 #### /top
 Movies are ranked according to their number of comments and to fetch the list `GET /api/v1/top`
 ```
+HTTP 200 OK
+Allow: GET, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
 [
+    {
+        "movie_id": 210,
+        "total_comments": 6,
+        "rank": 1
+    },
     {
         "movie_id": 206,
         "total_comments": 4,
-        "rank": 1
+        "rank": 2
     },
     {
         "movie_id": 207,
@@ -200,9 +210,9 @@ Movies are ranked according to their number of comments and to fetch the list `G
         "rank": 3
     },
     {
-        "movie_id": 209,
-        "total_comments": 3,
-        "rank": 2
+        "movie_id": 211,
+        "total_comments": 2,
+        "rank": 3
     }
 ]
 ```
