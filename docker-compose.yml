@@ -8,6 +8,7 @@ services:
       - "8000"
     ports:
     - "8000:8000"
+    env_file: moviesOMDb/.env
     environment:
       DEBUG: 'true'
     command: gunicorn movies.wsgi:application -w 2

@@ -1,5 +1,6 @@
 import datetime
 
+from django.conf import settings
 from django.db.models import Count, Window, F
 from django.db.models.functions.window import DenseRank
 from django.http import HttpResponse
@@ -13,9 +14,7 @@ from .serializers import MovieSerializer, CommentSerializer, \
     MovieDetailSerializer
 from .views_helpers import call_external_api
 
-# OMDB_API_KEY = settings.OMDB_API_KEY #good approach
-
-OMDB_API_KEY = 'c544ff3a'  # Not a good approach but for this task I left it so
+OMDB_API_KEY = settings.OMDB_API_KEY
 
 
 def index(request):
