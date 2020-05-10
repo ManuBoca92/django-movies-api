@@ -11,9 +11,4 @@ services:
     env_file: moviesOMDb/.env
     environment:
       DEBUG: 'true'
-    command: gunicorn movies.wsgi:application -w 2
-    depends_on:
-      - migration
-  migration:
-    build: moviesOMDb
-    command: python manage.py migrate --noinput
+    command: gunicorn movies.wsgi:application -w 2 --bind 0.0.0.0$PORT
