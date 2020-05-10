@@ -1,7 +1,9 @@
 import datetime
 
+from django.conf import settings
 from django.db.models import Count, Window, F
 from django.db.models.functions.window import DenseRank
+from django.http import HttpResponse
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import views, status, viewsets
 from rest_framework.filters import OrderingFilter, SearchFilter
@@ -11,14 +13,13 @@ from .models import Movie, Comment, MovieDetail
 from .serializers import MovieSerializer, CommentSerializer, \
     MovieDetailSerializer
 from .views_helpers import call_external_api
-from django.http import HttpResponse
 
-
-API_KEY = 'c544ff3a'
+OMDB_API_KEY = settings.OMDB_API_KEY
 
 
 def index(request):
-    html = 'Welcome! Please use API endpoints to make requests'
+    html = '<h3>Welcome! Use API endpoints to make requests for movies or ' \
+           'comments</h3>'
     return HttpResponse(html)
 
 
@@ -36,9 +37,9 @@ class MoviesViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         serializers = [MovieSerializer, MovieDetailSerializer]
-        title = request.data['Title']
-        if title:
-            url = f'http://www.omdbapi.com/?t={title}&apikey={API_KEY}'
+        if 'Title' in request.data:
+            title = request.data['Title']
+            url = f'http://www.omdbapi.com/?t={title}&apikey={OMDB_API_KEY}'
             data = call_external_api(url)
             if data['Response'] == 'True':
                 if not Movie.objects.filter(Title=data['Title']).exists():
