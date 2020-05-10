@@ -17,13 +17,13 @@ import environ
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
+# env = environ.Env(
+#     # set casting, default value
+#     DEBUG=(bool, False)
+# )
 
 # reading .env file
-environ.Env.read_env('.env')
+# environ.Env.read_env('.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -31,7 +31,7 @@ environ.Env.read_env('.env')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'z$jdjltwqtj+%kie&lc(!5jkq8u@f7$h38(&hz__*k+bl*anul'
 
-OMDB_API_KEY = env('OMDB_API_KEY')
+# OMDB_API_KEY = env('OMDB_API_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
