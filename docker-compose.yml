@@ -15,4 +15,4 @@ services:
       - migration
   migration:
     build: moviesOMDb
-    command: python manage,py migrate --noinput
+    command: python manage.py migrate --noinput
