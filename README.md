@@ -34,7 +34,12 @@ I implemented this task using [Django REST framework](https://www.django-rest-fr
 
 As requested that the application be dockerized and deployed on Heroku. Here is my application domain https://warm-journey-10447.herokuapp.com and it's configured with automatic deployments after push to `master` branch.
 
-Here is the heroku setup in case you want you check it out
+#### Docker
+Docker image for this task can be found on my Docker [hub](https://hub.docker.com/r/ebonom/django-movies-api_web)
+
+#### Heroku setup
+Heroku uses `heroku.yml` to build *Docker images*. 
+Here is the heroku setup in case you want you check it out.
 1. Create an account on heroku and download needed CLI using 
 ```
 brew tap heroku/brew && brew install heroku
