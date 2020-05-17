@@ -71,12 +71,6 @@ class CommentsViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         movie_id = request.data.get('movie_id')
-        movie_comment = request.data.get('movie_comment')
-
-        if not (movie_id and movie_comment):
-            return Response(
-                data={"Error message": 'Please provide request POST body'},
-                status=status.HTTP_400_BAD_REQUEST)
 
         if Movie.objects.filter(id=movie_id).exists():
             serializer = CommentSerializer(data=request.data)
