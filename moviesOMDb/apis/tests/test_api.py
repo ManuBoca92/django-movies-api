@@ -70,13 +70,6 @@ class CommentApiTest(APITestCase):
         response = self.client.post(self.url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-    def test_post_request_no_body(self):
-        data = {}
-        response = self.client.post(self.url, data, format='json')
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertEqual(response.json(),
-                         {'Error message': 'Please provide request POST body'})
-
     def test_list_two_comments(self):
         Movie.objects.create(Title="Old Boys")
         self.client.post(
