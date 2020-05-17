@@ -34,7 +34,7 @@ SECRET_KEY = 'z$jdjltwqtj+%kie&lc(!5jkq8u@f7$h38(&hz__*k+bl*anul'
 OMDB_API_KEY = env('OMDB_API_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
